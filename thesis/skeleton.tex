@@ -1,0 +1,476 @@
+
+% to choose your degree
+% please un-comment just one of the following
+\documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}     % for BSc, BEng etc.
+% \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
+\usepackage{listings}
+
+\begin{document}
+
+\title{High Performance Memcached}
+
+\author{Lijing Chen}
+
+% to choose your course
+% please un-comment just one of the following
+%\course{Artificial Intelligence and Computer Science}
+%\course{Artificial Intelligence and Software Engineering}
+%\course{Artificial Intelligence and Mathematics}
+%\course{Artificial Intelligence and Psychology }   
+%\course{Artificial Intelligence with Psychology }   
+%\course{Linguistics and Artificial Intelligence}    
+\course{Computer Science}
+%\course{Software Engineering}
+%\course{Computer Science and Electronics}    
+%\course{Electronics and Software Engineering}    
+%\course{Computer Science and Management Science}    
+%\course{Computer Science and Mathematics}
+%\course{Computer Science and Physics}  
+%\course{Computer Science and Statistics}    
+
+% to choose your report type
+% please un-comment just one of the following
+%\project{Undergraduate Dissertation} % CS&E, E&SE, AI&L
+%\project{Undergraduate Thesis} % AI%Psy
+\project{4th Year Project Report}
+
+\date{\today}
+
+\abstract{
+This is an example of {\tt infthesis} style.
+The file {\tt skeleton.tex} generates this document and can be 
+used to get a ``skeleton'' for your thesis.
+The abstract should summarise your report and fit in the space on the 
+first page. 
+%
+You may, of course, use any other software to write your report,
+as long as you follow the same style. That means: producing a title
+page as given here, and including a table of contents and bibliography.
+}
+
+\maketitle
+
+\section*{Acknowledgements}
+Acknowledgements go here. 
+
+\tableofcontents
+
+%\pagenumbering{arabic}
+
+
+\chapter{Introduction}
+
+
+\section{Motivation}
+
+Software object caches, such as Memcached, are crucial to achieving high throughput and low response latency in a datacenter setting. A well-known problem with Memcached deployments is the high overhead incurred by the kernel's TCP/IP stack in processing of individual requests. This project will evaluate the performance of a vanilla Memcached setup, followed by an assessment of the effect that user-level networking and TCP offload have on Memcached. 
+
+Memory object caches is now widely used in industry. One of the most widely used memory object cache is Memcached. 
+
+
+
+
+
+
+%
+%\section{Options}
+%
+%There are various documentclass options, see the documentation.  Here we are
+%using an option ({\tt bsc} or {\tt minf}) to choose the degree type, plus:
+%\begin{itemize}
+%\item {\tt frontabs} (recommended) to put the abstract on the front page;
+%\item {\tt twoside} (recommended) to format for two-sided printing, with
+%  each chapter starting on a right-hand page;
+%\item {\tt singlespacing} (required) for single-spaced formating; and
+%\item {\tt parskip} (a matter of taste) which alters the paragraph formatting so that
+%paragraphs are separated by a vertical space, and there is no
+%indentation at the start of each paragraph.
+%\end{itemize}
+%
+%\chapter{Methodology}
+
+%Of course
+%you may want to use several chapters and much more text than here.
+
+
+
+
+
+
+
+
+
+\chapter{Background}
+
+\section{Memcached}
+
+Memcached is a "high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load." Despite the ofﬁcial description aimed at dynamic web applications, Memcached is also used as a generic key value store to locate servers and services .
+
+\subsection{Memcached protocol}
+
+Memcached support two  transport-layer protocols: TCP and UDP. They have some small difference. The basic protocol we are going to use in our experiments are described as Table~\ref{tab:mem_proto}. Note that there are many other command provided by memcached, but we are only going to test the most basic ones as listed. Comparing with TCP, the UDP protocol added an additional binary header for controlling. 
+
+
+\begin{table}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
+
+ \hline
+ Operation & Meaning \\
+ \hline
+get [key]  & Get the value of key \\
+ \hline
+set [arg1] [flags] [xxx] & Mellanox Connect-X 4 \\
+ \hline
+delete [key] & delete a key provided by the arugument. \\
+ \hline
+ 
+\end{tabular}
+\caption{Basic Memcached protocol}
+\label{tab:mem_proto}
+
+
+\end{table}
+
+
+
+
+
+
+\section{User-level networking}
+One performance bottleneck of modern high-performance applications is the kernel TCP/IP stack. There is a trend in industry to replace kernel TCP/IP stack with user-level TCP/IP stack.
+
+
+
+\subsection{Data Plane Development Kit}
+
+
+The Data Plane Development Kit is "a set of libraries and drivers for fast packet processing"\cite{dpdk}. It runs mostly in userspace, and it serves as a platform for developer to develop high performance networking applications.
+
+
+
+DPDK provides developers with a framework, which contains a set of libraries for different hardware and software environments. DPDK encapsulates the low level environmental detail by creating Environment Abstraction Layer (EAL). Developers can program with a general interface, and link the library compiled for each specific environment, instead of coding with specific API from different hardware, operating systems etc.
+
+
+
+
+
+\subsection{Seastar}
+DPDK doesn't contain a TCP/IP stack. In order to migrate TCP/IP based applications to use DPDK, developers need to implement their own TCP/IP stack using DPDK provided API. 
+
+
+
+\section{TCP Offload}
+TCP Offloading is another technique quite widely used in modern NIC cards. In order to alleviate the load of CPU, NIC manufacturers provided different level of offloading features in NIC, this means some of the operations like checksum, fragmentation can be processed by NIC directly instead of host CPU. 
+
+
+\subsection{Full offload vs Partial offload}
+
+
+There are two type of TCP Offloading. Full offload means we offload all kernel TCP/IP stack to our NIC. Partial offload means we only offload some part of TCP/IP stack to our NIC, like checksum, segmentation etc. 
+
+
+
+% rephrase
+TOE implementations also can be differentiated by the amount of processing that is offloaded to the network adapter. In situations where TCP connections are stable and packet drops infrequent, the highest amount of TCP processing is spent in data transmission and reception. Offloading just the processing related to transmission and reception is referred to as partial offloading. A partial, or data path, TOE implementation eliminates the host CPU overhead created by transmission and reception. However, the partial offloading method improves performance only in situations where TCP connections are created and held for a long time and errors and lost packets are infrequent. Partial offloading relies on the host stack to handle control—that is, connection setup—as well as exceptions. A partial TOE implementation does not handle the following:
+
+
+\subsection{TCP/IP checksum offload}
+
+% rephrase done
+
+TCP/IP checksum offload let the network adapter to do the calculation task of verifying the checksum of packet received, which is done by CPU originally. This technique can reduce the CPU utilization.
+
+% rephrase
+
+The TCP/IP checksum offload technique moves the calculation of
+the TCP and IP checksum packets from the host CPU to the network
+adapter. For the TCP checksum, the transport layer on the host calculates
+the TCP pseudo-header checksum and places this value in
+the checksum field, thus enabling the network adapter to calculate
+the correct TCP checksum without touching the IP header. However,
+this approach yields only a modest reduction in CPU utilization.
+
+
+
+\subsection{Large send offload}
+
+% rephrase
+Large send offload (LSO), also known as TCP segmentation offload
+(TSO), frees the OS from the task of segmenting the application’s
+transmit data into MTU-size chunks. Using LSO, TCP can transmit
+a chunk of data larger than the MTU size to the network adapter.
+The adapter driver then divides the data into MTU-size chunks and
+uses the prototype TCP and IP headers of the send buffer to create
+TCP/IP headers for each packet in preparation for transmission.
+
+
+
+LSO is an extremely useful technology to scale performance
+across multiple Gigabit Ethernet links, although it does so under certain
+conditions. The LSO technique is most efficient when transferring
+large messages. Also, because LSO is a stateless offload, it yields
+performance benefits only for traffic being sent; it offers no improvements
+for traffic being received. Although LSO can reduce CPU utilization
+by approximately half, this benefit can be realized only if
+the receiver’s TCP window size is set to 64 KB. LSO has little effect
+on interrupt processing because it is a transmit-only offload.
+
+
+Methods such as TCP/IP checksum offload and LSO provide limited performance gains or are advantageous only under certain conditions. For example, LSO is less effective when transmitting several smaller-sized packages. Also, in environments where packets are frequently dropped and connections lost, connection setup and maintenance consume a significant proportion of the host’s processing power. Methods like LSO would produce minimal performance improvements in such environments.
+
+
+
+
+
+
+
+
+
+\chapter{Methodology}
+
+
+
+\section{Quality of Service}
+
+
+
+% rephrase
+
+Firstly, it is important the define the desired quality of service we are looking to target with our benchmarks. Frequently, distributed systems are designed to work in parallel, each component responsible for a piece of computation which is then ultimately assembled into a larger piece of response before being shipped to the client. For example, an e-commerce store may choose to compute suggested products as well as brand new products separately only to assemble individual responses into an HTML page. Therefore, the slowest of all individual components will determine the overall time required to render a response.
+
+
+
+
+
+Let us define the quality of service (QoS) target of this study. For our benchmarking purposes, a sufficient  QoS will be the 99th percentile tail latency of a system under 1 millisecond. This is a reasonable target as the mean latency will generally (based on latency distribution) be significantly smaller. Furthermore, it is a similar latency target used in related research.
+
+
+
+
+
+
+\section{Hardware}
+
+The Server we are using is described in  Table~\ref{tab:hardware}.
+
+
+\subsection{Server}
+
+
+\begin{table}
+\begin{tabular}{ |p{6cm}||p{6cm}|  }
+
+ \hline
+ \multicolumn{2}{|c|}{Hardware List} \\
+ \hline
+ Component Name & Device \\
+ \hline
+CPU & Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz (40 cores) \\
+ \hline
+Network Interface Card & Mellanox Connect-X 4 \\
+ \hline
+ 
+ 
+\end{tabular}
+\caption{Hardware Table}
+\label{tab:hardware}
+
+\end{table}
+
+
+
+
+The Network Interface Card we are using is (mlx5) \cite{P1} .
+
+
+\subsubsection{Network topology}
+
+For DPDK tests, we directly connect the NIC in two servers using network cable due to device limitation. The reason we use this topology is the NIC only supports Infiniband ports, but we don't have a switch that supports Infiniband. But then don't make a large difference and it's sufficient for us to do our experiments.
+
+
+
+
+
+
+\section{Benchmark}
+
+
+\subsection{Open-loop vs Closed loop}
+
+There are two kinds of load testers: open-loop and closed-loop. Open-loop load testers send a new request only when the previous one has returned ( only one outstanding request ), while closed-loop load testers can send a new one even the previous one is pending (allow multiple outstanding requests).
+
+
+
+\subsection{Treadmill}
+
+Treadmill \cite{DBLP:conf/isca/ZhangMMT16} is a open-source load tester for memcached developed by Facebook. It's a typical open-loop load tester. It only supports TCP for memcached. For our experiments involving UDP, we implemented our own version of memcached for UDP.
+
+
+
+\subsection{Memaslap}
+
+Memaslap is a load tester provide by libmemcached \cite{P2}. It's a closed loop load tester.  
+
+
+
+\chapter{Baseline Tuning}
+
+
+
+\section{Multithreading}
+In this section, we are going to explore the influence of multithreading. 
+
+
+
+
+\section{Multiprocessing}
+
+
+
+
+
+
+
+\section{IRQ Affinity}
+
+
+
+
+
+
+\chapter{Contention Analysis}
+
+\section{Core contention}
+
+\section{SMT Thread contention}
+
+
+
+
+
+\chapter{User-level Networking Optimization}
+
+\section{DPDK}
+
+\subsection{DPDK Setup}
+
+In this section, we are going to go over how DPDK is set up.
+
+
+\textbf{Setup hugepage mapping} Hugepages is a mechanism that allows the Linux kernel to utilize the multiple page size capabilities of modern hardware architectures. Linux uses pages as the basic unit of memory, where physical memory is partitioned and accessed using the basic page unit. The default page size is 4096 Bytes in the x86 architecture. Hugepages allows large amounts of memory to be utilized with a reduced overhead.
+
+
+
+%\shellcmd{mkdir -p /mnt/huge}
+%\texttt{\footnotesize\ sasasasa\newline sassasaas}
+
+\textbf{Compile and insert DPDK kernel modules} First we need to do \texttt{make config} to tell the compiler which architecture we are targeting. We need to generate binaries working on \texttt{x86\_64-native-linuxapp-gcc}. 
+
+\begin{lstlisting}[language=bash]
+  $ make config T=x86_64-native-linuxapp-gcc
+\end{lstlisting}
+
+Some NIC driver is not enabled by default, including the one we are using (mlx5). In this case, we need to manually enable it in \texttt{ config/common\_base} file.
+
+Then we can use \texttt{make} command to compile
+
+
+
+Then switch to output folder and insert kernel module: \texttt{igb\_uio.ko} using \texttt{insmod}.
+
+
+\textbf{Configure NIC} First we need to unload the NIC from system kernel driver using \texttt{ifconfig}. \texttt{ifconfig p2p1 down}. Then we can use the tool provided by DPDK to bind NIC to kernel driver. \texttt{dpdk-devbind.py}
+
+
+
+
+\chapter{Evaluation}
+
+
+
+
+\chapter{TCP Offloading}
+
+\section{Setup TCP Offloading}
+First, we use \textbf{ethtool} to check device offloading. We can show the support for TCP Offloading by executing following command: 
+\shellcmd{ethtool -k p2p2}
+
+
+%Features for p2p2:
+%rx-checksumming: on
+%tx-checksumming: on
+%	tx-checksum-ipv4: on
+%	tx-checksum-ip-generic: off [fixed]
+%	tx-checksum-ipv6: on
+%	tx-checksum-fcoe-crc: off [fixed]
+%	tx-checksum-sctp: off [fixed]
+%scatter-gather: on
+%	tx-scatter-gather: on
+%	tx-scatter-gather-fraglist: off [fixed]
+%tcp-segmentation-offload: on
+%	tx-tcp-segmentation: on
+%	tx-tcp-ecn-segmentation: on
+%	tx-tcp6-segmentation: on
+%udp-fragmentation-offload: off [fixed]
+%generic-segmentation-offload: on
+%generic-receive-offload: on
+%large-receive-offload: on
+%rx-vlan-offload: on [fixed]
+%tx-vlan-offload: on
+%ntuple-filters: off [fixed]
+%receive-hashing: on
+%highdma: on [fixed]
+%rx-vlan-filter: on
+%vlan-challenged: off [fixed]
+%tx-lockless: off [fixed]
+%netns-local: off [fixed]
+%tx-gso-robust: off [fixed]
+%tx-fcoe-segmentation: off [fixed]
+%tx-gre-segmentation: on
+%tx-ipip-segmentation: on
+%tx-sit-segmentation: on
+%tx-udp_tnl-segmentation: on
+%fcoe-mtu: off [fixed]
+%tx-nocache-copy: off
+%loopback: off
+%rx-fcs: off [fixed]
+%rx-all: off [fixed]
+%tx-vlan-stag-hw-insert: off [fixed]
+%rx-vlan-stag-hw-parse: off [fixed]
+%rx-vlan-stag-filter: off [fixed]
+%l2-fwd-offload: off [fixed]
+%busy-poll: on [fixed]
+%hw-tc-offload: off [fixed]
+
+
+
+\section{Large Send Offload}
+
+
+
+
+
+
+
+
+
+\chapter{Performance Analysis}
+
+\section{Profiling Tools}
+
+\subsection{Linux perf}
+
+
+\section{Profiling Visualization}
+\subsection{FlameGraph}
+
+
+
+
+
+% use the following and \cite{} as above if you use BibTeX
+% otherwise generate bibtem entries
+\bibliographystyle{plain}
+\bibliography{mybibfile}
+
+\end{document}

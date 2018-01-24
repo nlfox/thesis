@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{dpdk}
+Intel.
+\newblock {Intel Data Plane Development Kit}.
+\newblock http://www.intel.com/go/dpdk, 2016.
+
+\end{thebibliography}

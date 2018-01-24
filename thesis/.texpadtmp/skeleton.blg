@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: /Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.aux
+The style file: plain.bst
+Database file #1: ../mybibfile.bib
+A bad cross reference---entry "DBLP:conf/isca/ZhangMMT16"
+refers to entry "DBLP:conf/isca/2016", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/isca/2016"
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            524 strings with 4773 characters,
+and the built_in function-call counts, 1405 in all, are:
+= -- 136
+> -- 50
+< -- 2
++ -- 20
+- -- 16
+* -- 74
+:= -- 216
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 65
+empty$ -- 127
+format.name$ -- 16
+if$ -- 317
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 33
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 54
+stack$ -- 0
+substring$ -- 80
+swap$ -- 24
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 14
+warning$ -- 0
+while$ -- 13
+width$ -- 5
+write$ -- 45
+(There was 1 error message)
