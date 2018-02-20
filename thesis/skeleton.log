@@ -1,25 +1,29 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 JAN 2018 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 FEB 2018 10:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**skeleton.tex
-(./skeleton.tex
+**/Users/nlfox/hp/report/thesis/skeleton.tex
+(/Users/nlfox/hp/report/thesis/skeleton.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (./infthesis.cls
 Document Class: infthesis 2013/02/07 v3.7 School of Informatics Thesis Class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
- (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count79
@@ -34,28 +38,37 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen108
 \Gm@layoutvoffset=\dimen109
 \Gm@dimlist=\toks15
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count82
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/xspace.sty
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (./eushield.sty
-Package: eushield 2006/08/28\ v1.1\ Commands for including the EU shield graphic
+Package: eushield 2006/08/28\ v1.1\ Commands for including the EU shield graphi
+c
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo
@@ -73,7 +86,8 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen110
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/pslatex/pslatex.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pslatex/pslatex.sty
 Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -107,11 +121,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
- (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen111
@@ -123,17 +141,53 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@hangindent=\dimen117
 )
 \c@ContinuedFloat=\count92
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/parskip/parskip.sty
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/minted/minted.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count93
+\lst@gtempboxa=\box26
+\lst@token=\toks16
+\lst@length=\count94
+\lst@currlwidth=\dimen118
+\lst@column=\count95
+\lst@pos=\count96
+\lst@lostspace=\dimen119
+\lst@width=\dimen120
+\lst@newlines=\count97
+\lst@lineno=\count98
+\lst@maxwidth=\dimen121
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count99
+\lst@skipnumbers=\count100
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count101
+\c@subtable=\count102
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2016/10/31 v2.4.1 Yet another Pygments shim for LaTeX
- (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -141,23 +195,32 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-))) (/usr/local/texlive/2017/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2016/09/02 v1.2.1 fvextra - extensions and patches for fancyvrb
- (/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2016/09/02 v1.2.1 fvextra - extensions and patches for fancyvr
+b
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count93
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+\etb@tempcnta=\count103
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
- Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix <2008/02/07> (tvz)
-\FV@CodeLineNo=\count94
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count104
 \FV@InFile=\read1
-\FV@TabBox=\box26
-\c@FancyVerbLine=\count95
-\FV@StepNumber=\count96
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count105
+\FV@StepNumber=\count106
 \FV@OutFile=\write3
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/textcomp.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -171,7 +234,8 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.def
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -199,6 +263,7 @@ Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
 Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
 Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
 Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
 Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
 Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
 Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
@@ -236,101 +301,119 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/lineno/lineno.sty
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count97
-\output=\toks16
-\linenoprevgraf=\count98
-\linenumbersep=\dimen118
-\linenumberwidth=\dimen119
-\c@linenumber=\count99
-\c@pagewiselinenumber=\count100
-\c@LN@truepage=\count101
-\c@internallinenumber=\count102
-\c@internallinenumbers=\count103
-\quotelinenumbersep=\dimen120
-\bframerule=\dimen121
-\bframesep=\dimen122
-\bframebox=\box27
+\linenopenalty=\count107
+\output=\toks17
+\linenoprevgraf=\count108
+\linenumbersep=\dimen122
+\linenumberwidth=\dimen123
+\c@linenumber=\count109
+\c@pagewiselinenumber=\count110
+\c@LN@truepage=\count111
+\c@internallinenumber=\count112
+\c@internallinenumbers=\count113
+\quotelinenumbersep=\dimen124
+\bframerule=\dimen125
+\bframesep=\dimen126
+\bframebox=\box29
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count104
-\c@FV@TrueTabCounter=\count105
-\FV@TabBox@Group=\box28
+\c@FV@TrueTabGroupLevel=\count114
+\c@FV@TrueTabCounter=\count115
+\FV@TabBox@Group=\box30
 \FV@TmpLength=\skip43
-\c@FV@HighlightLinesStart=\count106
-\c@FV@HighlightLinesStop=\count107
-\FV@BreakIndent=\dimen123
-\FV@BreakSymbolSepLeft=\dimen124
-\FV@BreakSymbolSepRight=\dimen125
-\FV@BreakSymbolIndentLeft=\dimen126
-\FV@BreakSymbolIndentRight=\dimen127
-\c@FancyVerbLineBreakLast=\count108
-\FV@LineBox=\box29
-\FV@LineIndentBox=\box30
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+\c@FV@HighlightLinesStart=\count116
+\c@FV@HighlightLinesStop=\count117
+\FV@BreakIndent=\dimen127
+\FV@BreakSymbolSepLeft=\dimen128
+\FV@BreakSymbolSepRight=\dimen129
+\FV@BreakSymbolIndentLeft=\dimen130
+\FV@BreakSymbolIndentRight=\dimen131
+\c@FancyVerbLineBreakLast=\count118
+\FV@LineBox=\box31
+\FV@LineIndentBox=\box32
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count109
-\float@exts=\toks17
-\float@box=\box31
-\@float@everytoks=\toks18
-\@floatcapt=\box32
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/calc.sty
+\c@float@type=\count119
+\float@exts=\toks18
+\float@box=\box33
+\@float@everytoks=\toks19
+\@floatcapt=\box34
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count110
-\calc@Bcount=\count111
-\calc@Adimen=\dimen128
-\calc@Bdimen=\dimen129
+\calc@Acount=\count120
+\calc@Bcount=\count121
+\calc@Adimen=\dimen132
+\calc@Bdimen=\dimen133
 \calc@Askip=\skip44
 \calc@Bskip=\skip45
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count112
+\calc@Ccount=\count122
 \calc@Cskip=\skip46
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/shellesc.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
 Package shellesc Info: Unrestricted shell escape enabled on input line 67.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/catchfile.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 )
 runsystem(uname -s > "skeleton.w18")...executed.
 
- (./skeleton.w18)
+
+(./skeleton.w18)
 runsystem(rm -- "skeleton.w18")...executed.
 
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.tex
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
-\integerpart=\count113
-\decimalpart=\count114
+\integerpart=\count123
+\decimalpart=\count124
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/framed/framed.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip47
-\fb@frw=\dimen130
-\fb@frh=\dimen131
-\FrameRule=\dimen132
-\FrameSep=\dimen133
+\fb@frw=\dimen134
+\fb@frh=\dimen135
+\FrameRule=\dimen136
+\FrameSep=\dimen137
 )
 \minted@appexistsfile=\read2
-\minted@bgbox=\box33
+\minted@bgbox=\box35
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count115
-\c@minted@pygmentizecounter=\count116
-\@float@every@listing=\toks19
-\c@listing=\count117
+\c@minted@FancyVerbLineTemp=\count125
+\c@minted@pygmentizecounter=\count126
+\@float@every@listing=\toks20
+\c@listing=\count127
 )
-runsystem(mkdir -p cache/_minted-skeleton)...executed.
+runsystem(mkdir -p _minted-skeleton)...executed.
 
- (/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen138
+\Gin@req@width=\dimen139
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -351,31 +434,38 @@ runsystem(which pygmentize && touch skeleton.aex)...executed.
 
 runsystem(rm skeleton.aex)...executed.
 
- (./skeleton.aux)
+
+(./skeleton.aux
+
+LaTeX Warning: Label `tab:hardware' multiply defined.
+
+)
 \openout1 = `skeleton.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 8.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 11.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 11
+.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 8.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 11.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    ... okay on input line 11.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -413,82 +503,98 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen134
-\scratchbox=\box34
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen135
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count128
+\scratchdimen=\dimen140
+\scratchbox=\box36
+\nofMPsegments=\count129
+\nofMParguments=\count130
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen141
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
- (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
- (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count134
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 51.
- [1
+(Font)              scaled to size 18.66588pt on input line 54.
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+[1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 51.
+(Font)              scaled to size 10.79993pt on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 51.
+(Font)              scaled to size 10.79993pt on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 51.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 54.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 51.
+(Font)              scaled to size 10.79993pt on input line 54.
  [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 53.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 53.
- [4]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 56.
+(Font)              scaled to size 15.55188pt on input line 56.
+ [4]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 59.
  (./skeleton.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
+
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omlptmcm.fd
+
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omxpsycm.fd
+
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
@@ -503,123 +609,190 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
  [6]
 Chapter 1.
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no Ô in font ptmr7t!
-Missing character: There is no ¨ in font ptmr7t!
-Missing character: There is no Å in font ptmr7t!
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 82.
+[7
 
-Underfull \vbox (badness 1735) has occurred while \output is active []
-
- [7
-
-]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no î in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no î in font ptmr7t!
- [8]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
- [9] [10
+] [8
 
 ]
 Chapter 2.
-[11] [12]
+
+Overfull \hbox (3.90283pt too wide) in paragraph at lines 121--122
+\OT1/ptm/m/n/12 Memcached is a "high-performance, dis-tributed mem-ory ob-ject 
+caching sys-tem, generic
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 123.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 7099) has occurred while \output is active []
+
+ [9]
+[10]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no î in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no î in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+ [11]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+ [12]
 Chapter 3.
 [13
 
-] [14
-
-]
+] [14]
 Chapter 4.
-[15] [16
+[15
 
-]
-Chapter 5.
+] <figure/multithreading.pdf, id=57, 722.7pt x 722.7pt>
+File: figure/multithreading.pdf Graphic file (type pdf)
+
+<use figure/multithreading.pdf>
+Package pdftex.def Info: figure/multithreading.pdf used on input line 390.
+(pdftex.def)             Requested size: 288.78816pt x 288.78816pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no à in font ptmr7t!
+Missing character: There is no ´ in font ptmr7t!
 \openout3 = `skeleton.pyg'.
 
-./skeleton.tex:278: FancyVerb Error:
-  Extraneous input ` make config' between \begin{minted}[<key=value>] and line end
-.
-\FV@Error ... {FancyVerb Error:
-\space \space #1
-}
-                                                  
-l.278 	$ make config
-                    
-This input will be discarded. Hit <return> to continue.
+ (./_minted-skeleton/default-pyg-prefix.pygstyle) (./_minted-skeleton/default.p
+ygstyle)
+(./_minted-skeleton/EE9C7ABE1EE54241F83D41E3CFFB13FF5366C25BD963E251432D8B9A045
+40CAA.pygtex [16 <./figure/multithreading.pdf>])
+File: figure/multithreading.pdf Graphic file (type pdf)
 
-(./cache/_minted-skeleton/default-pyg-prefix.pygstyle) (./cache/_minted-skeleton/default.pygstyle)
-runsystem(pygmentize -l $ -f latex -P commandprefix=PYG -F tokenmerge -o cache/_minted-skeleton/6BAB4590006CBEDE2F7751AC526688B2.pygtex cache/skeleton.pyg)...executed.
+<use figure/multithreading.pdf>
+Package pdftex.def Info: figure/multithreading.pdf used on input line 426.
+(pdftex.def)             Requested size: 288.78816pt x 288.78816pt.
+ [17] [18]
+Chapter 5.
+[19
 
-
-
-./skeleton.tex:279: Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-[17] [18
+] [20
 
 ]
 Chapter 6.
+\openout3 = `skeleton.pyg'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
+(./_minted-skeleton/2481647172467FE2401AABA4D386C6295366C25BD963E251432D8B9A045
+40CAA.pygtex)
+\openout3 = `skeleton.pyg'.
+
+
+(./_minted-skeleton/1CA9ECB801BBA9D7E24BC25A552235045366C25BD963E251432D8B9A045
+40CAA.pygtex)
+\openout3 = `skeleton.pyg'.
+
+
+(./_minted-skeleton/58149317D9D143DF77F8D5544F48E5745366C25BD963E251432D8B9A045
+40CAA.pygtex)
+Overfull \hbox (27.47142pt too wide) in paragraph at lines 495--496
+[]\OT1/ptm/m/n/12 Then we can use the tool pro-vided by DPDK to bind NIC to ker
+-nel driver. \OT1/pcr/m/n/12 dpdk-devbind.py
  []
 
-[19] [20
+[21] <figure/dpdk_1.pdf, id=115, 433.62pt x 289.08pt>
+File: figure/dpdk_1.pdf Graphic file (type pdf)
+ <use figure/dpdk_1.pdf>
+Package pdftex.def Info: figure/dpdk_1.pdf used on input line 507.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (21.05397pt too wide) in paragraph at lines 507--508
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./figure/dpdk_1.pdf>] <figure/dpdk_busy_pie.pdf, id=164, 433.62pt x 289.0
+8pt>
+File: figure/dpdk_busy_pie.pdf Graphic file (type pdf)
+
+<use figure/dpdk_busy_pie.pdf>
+Package pdftex.def Info: figure/dpdk_busy_pie.pdf used on input line 526.
+(pdftex.def)             Requested size: 162.6071pt x 108.405pt.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 527.
+
+<figure/dpdk_idle_pie.pdf, id=165, 433.62pt x 289.08pt>
+File: figure/dpdk_idle_pie.pdf Graphic file (type pdf)
+
+<use figure/dpdk_idle_pie.pdf>
+Package pdftex.def Info: figure/dpdk_idle_pie.pdf used on input line 533.
+(pdftex.def)             Requested size: 162.6071pt x 108.405pt.
+
+Overfull \hbox (4.56006pt too wide) in paragraph at lines 525--539
+ [][]  [] 
+ []
+
+<figure/mem_busy_pie.pdf, id=166, 433.62pt x 289.08pt>
+File: figure/mem_busy_pie.pdf Graphic file (type pdf)
+
+<use figure/mem_busy_pie.pdf>
+Package pdftex.def Info: figure/mem_busy_pie.pdf used on input line 550.
+(pdftex.def)             Requested size: 206.28249pt x 137.52173pt.
+ [23 <./figure/dpdk_busy_pie.pdf> <./figure/dpdk_idle_pie.pdf
+
+pdfTeX warning: pdflatex (file ./figure/dpdk_idle_pie.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+> <./figure/mem_busy_pie.pdf
+
+pdfTeX warning: pdflatex (file ./figure/mem_busy_pie.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>] [24
 
 ]
 Chapter 7.
-(./skeleton.bbl [21] [22
 
-]) [23] (./skeleton.aux) )
-(\end occurred when \ifx on line 278 was incomplete) 
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
+
+ []
+
+(./skeleton.bbl [25] [26
+
+]) [27] (./skeleton.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+runsystem(rm skeleton.pyg)...executed.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7400 strings out of 492995
- 124946 string characters out of 6132704
- 235859 words of memory out of 5000000
- 10805 multiletter control sequences out of 15000+600000
- 35035 words of font info for 67 fonts, out of 8000000 for 9000
+ 8735 strings out of 492995
+ 146167 string characters out of 6132704
+ 256906 words of memory out of 5000000
+ 12105 multiletter control sequences out of 15000+600000
+ 37931 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,6n,40p,869b,254s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on skeleton.pdf (23 pages, 85885 bytes).
+ 43i,10n,40p,940b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
+/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utm
+ri8a.pfb>
+Output written on skeleton.pdf (27 pages, 158400 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 279 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

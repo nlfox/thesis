@@ -1,61 +1,111 @@
 \relax 
-\citation{dpdk}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Motivation}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Memcached}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}User-level networking}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}DPDK}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1.1}Seastar}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}TCP Offload}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Full offload vs Partial offload}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}TCP/IP checksum offload}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Large send offload}{9}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Methodology}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Project Aim}{7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Quality of Service}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Hardware}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Network Interface Card}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.1}Network topology}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.2}Mode switch}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Benchmark}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Open-loop vs Closed loop}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Treadmill}{12}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Baseline Tuning}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Memcached}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Memcached protocol}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Basic Memcached protocol\relax }}{9}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:mem_proto}{{2.1}{9}}
+\citation{dpdk}
+\citation{seastar}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Memcached UDP frame header\relax }}{10}}
+\newlabel{tab:mem_proto_udp}{{2.2}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Memcached parameters}{10}}
+\newlabel{parameter}{{2.1.2}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}User-level networking}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Data Plane Development Kit}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Seastar}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}TCP Offload}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Full offload vs Partial offload}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}TCP/IP checksum offload}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Large send offload}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Performance Analysis}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Linux perf}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}FlameGraph}{12}}
+\citation{P1}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{13}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Multithreading}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Multiprocessing}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}IRQ Affinity}{13}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Contention Analysis}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Quality of Service}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Hardware}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Server}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Hardware Table\relax }}{13}}
+\newlabel{tab:hardware}{{3.1}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1.1}Network topology}{13}}
+\citation{DBLP:conf/isca/ZhangMMT16}
+\citation{P2}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Benchmark}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Open-loop vs Closed loop}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Treadmill}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Memaslap}{14}}
+\citation{DBLP:conf/eurosys/LeverichK14}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Baseline Tuning}{15}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Core contention}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}SMT Thread contention}{15}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}User-level Networking Optimization}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Multithreading}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Setup}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Result}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Hardware Table\relax }}{16}}
+\newlabel{tab:hardware}{{4.1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Multithreading\relax }}{16}}
+\newlabel{fig:threads}{{4.1}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Interrupt batching}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Setup}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Batching vs non-batching interrupts\relax }}{17}}
+\newlabel{fig:batching}{{4.2}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Result}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Multiprocessing}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Setup}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Result}{18}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Contention Analysis}{19}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}DPDK}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}DPDK Setup}{17}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}TCP Offloading}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Core contention}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}SMT Thread contention}{19}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}User-level Networking Optimization}{21}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Setup TCP Offloading}{19}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Large Send Offload}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}DPDK}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}DPDK Setup}{21}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Experiment}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Single Core performance}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces DPDK\relax }}{22}}
+\newlabel{fig:dpdk_1}{{6.1}{22}}
+\newlabel{fig:dpdk_busy_pie}{{6.2a}{23}}
+\newlabel{sub@fig:dpdk_busy_pie}{{a}{23}}
+\newlabel{fig:dpdk_idle_pie}{{6.2b}{23}}
+\newlabel{sub@fig:dpdk_idle_pie}{{b}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces DPDK CPU utilization\relax }}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Multiple Core performance}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Analysis}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}CPU utilization analysis}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Memcached (stock) busy time CPU utitlization\relax }}{23}}
+\newlabel{fig:dpdk_idle_pie_1}{{6.3}{23}}
 \bibstyle{plain}
 \bibdata{mybibfile}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Performance Analysis}{21}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}TCP Offloading}{25}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Profiling Tools}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Linux perf}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Profiling Visualization}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}FlameGraph}{21}}
-\bibcite{dpdk}{1}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Setup TCP Offloading}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Checksum Offload}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Large Send Offload}{25}}
+\bibcite{P1}{1}
+\bibcite{P2}{2}
+\bibcite{dpdk}{3}
+\bibcite{DBLP:conf/eurosys/LeverichK14}{4}
+\bibcite{seastar}{5}
+\bibcite{DBLP:conf/isca/ZhangMMT16}{6}
 \gdef\minted@oldcachelist{,
   default-pyg-prefix.pygstyle,
   default.pygstyle,
-  6BAB4590006CBEDE2F7751AC526688B2.pygtex}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{23}}
+  EE9C7ABE1EE54241F83D41E3CFFB13FF5366C25BD963E251432D8B9A04540CAA.pygtex,
+  2481647172467FE2401AABA4D386C6295366C25BD963E251432D8B9A04540CAA.pygtex,
+  1CA9ECB801BBA9D7E24BC25A552235045366C25BD963E251432D8B9A04540CAA.pygtex,
+  58149317D9D143DF77F8D5544F48E5745366C25BD963E251432D8B9A04540CAA.pygtex}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{27}}

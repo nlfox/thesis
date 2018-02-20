@@ -16,6 +16,11 @@ Intel.
 \newblock {Intel Data Plane Development Kit}.
 \newblock http://www.intel.com/go/dpdk, 2016.
 
+\bibitem{seastar}
+Scylla.
+\newblock { Seastar Framework }.
+\newblock http://www.seastar-project.org/, 2016.
+
 \bibitem{DBLP:conf/isca/ZhangMMT16}
 Yunqi Zhang, David Meisner, Jason Mars, and Lingjia Tang.
 \newblock Treadmill: Attributing the source of tail latency through precise

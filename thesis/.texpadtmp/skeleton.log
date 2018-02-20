@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 JAN 2018 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 FEB 2018 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -147,25 +147,37 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
- (/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.aux)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count101
+\c@subtable=\count102
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
+) (/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.aux
+
+LaTeX Warning: Label `fig:dpdk_idle_pie' multiply defined.
+
+)
 \openout1 = `skeleton.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 8.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 10.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -203,16 +215,16 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen122
+\scratchcounter=\count103
+\scratchdimen=\dimen124
 \scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
+\nofMPsegments=\count104
+\nofMParguments=\count105
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen123
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen125
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
 \everyMPtoPDFconversion=\toks18
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
@@ -251,42 +263,42 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count107
+\c@lstlisting=\count109
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 51.
+(Font)              scaled to size 18.66588pt on input line 53.
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 51.
+(Font)              scaled to size 10.79993pt on input line 53.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 51.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 51.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 51.
- [3]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 15.55188pt on input line 53.
+(Font)              scaled to size 10.79993pt on input line 53.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 53.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 10.79993pt on input line 53.
+ [3]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 55.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 15.55188pt on input line 55.
  [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 58.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 56.
+(Font)              scaled to size 22.39185pt on input line 58.
  (/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
@@ -320,20 +332,17 @@ Chapter 1.
 
 ]
 Chapter 2.
-Missing character: There is no Ô in font ptmr7t!
-Missing character: There is no ¨ in font ptmr7t!
-Missing character: There is no Å in font ptmr7t!
 
-Overfull \hbox (3.90283pt too wide) in paragraph at lines 107--108
+Overfull \hbox (3.90283pt too wide) in paragraph at lines 120--121
 \OT1/ptm/m/n/12 Memcached is a "high-performance, dis-tributed mem-ory ob-ject caching sys-tem, generic
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 109.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 109.
+(Font)              scaled to size 12.9599pt on input line 122.
 [9]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
@@ -351,14 +360,14 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
- [11] [12
 
-]
+Underfull \vbox (badness 5696) has occurred while \output is active []
+
+ [11] [12]
 Chapter 3.
+[13
 
-Underfull \vbox (badness 1448) has occurred while \output is active []
-
- [13] [14]
+] [14]
 Chapter 4.
 [15
 
@@ -374,39 +383,77 @@ Chapter 6.
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [19] [20
+) [19] <figure/dpdk_1.pdf, id=71, 433.62pt x 289.08pt>
+File: figure/dpdk_1.pdf Graphic file (type pdf)
+ <use figure/dpdk_1.pdf>
+Package pdftex.def Info: figure/dpdk_1.pdf used on input line 419.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (21.05397pt too wide) in paragraph at lines 419--420
+[][] 
+ []
+
+<figure/dpdk_busy_pie.pdf, id=72, 433.62pt x 289.08pt>
+File: figure/dpdk_busy_pie.pdf Graphic file (type pdf)
+ <use figure/dpdk_busy_pie.pdf>
+Package pdftex.def Info: figure/dpdk_busy_pie.pdf used on input line 430.
+(pdftex.def)             Requested size: 162.6071pt x 108.405pt.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 431.
+ <figure/dpdk_idle_pie.pdf, id=73, 433.62pt x 289.08pt>
+File: figure/dpdk_idle_pie.pdf Graphic file (type pdf)
+ <use figure/dpdk_idle_pie.pdf>
+Package pdftex.def Info: figure/dpdk_idle_pie.pdf used on input line 437.
+(pdftex.def)             Requested size: 162.6071pt x 108.405pt.
+
+Overfull \hbox (4.56006pt too wide) in paragraph at lines 429--443
+ [][]  [] 
+ []
+
+<figure/mem_busy_pie.pdf, id=74, 433.62pt x 289.08pt>
+File: figure/mem_busy_pie.pdf Graphic file (type pdf)
+ <use figure/mem_busy_pie.pdf>
+Package pdftex.def Info: figure/mem_busy_pie.pdf used on input line 454.
+(pdftex.def)             Requested size: 206.28249pt x 137.52173pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20 <./figure/dpdk_1.pdf>] [21 <./figure/dpdk_busy_pie.pdf> <./figure/dpdk_idle_pie.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure/dpdk_idle_pie.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figure/mem_busy_pie.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure/mem_busy_pie.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [22
 
 ]
 Chapter 7.
-[21] [22
 
-]
-Chapter 8.
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--397
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
 
  []
 
-[23] [24
+(/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.bbl [23] [24
 
-]
-Chapter 9.
-(/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.bbl [25] [26
+]) [25] (/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.aux)
 
-]) [27] (/Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.aux) ) 
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4960 strings out of 492995
- 75910 string characters out of 6132704
- 157691 words of memory out of 5000000
- 8428 multiletter control sequences out of 15000+600000
- 37284 words of font info for 70 fonts, out of 8000000 for 9000
+ 5100 strings out of 492995
+ 78298 string characters out of 6132704
+ 159560 words of memory out of 5000000
+ 8557 multiletter control sequences out of 15000+600000
+ 39044 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,9n,51p,869b,988s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.pdf (27 pages, 110093 bytes).
+Output written on /Users/nlfox/hp/report/thesis/.texpadtmp/skeleton.pdf (25 pages, 148416 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 238 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

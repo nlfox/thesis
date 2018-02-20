@@ -4,7 +4,10 @@
 \documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}     % for BSc, BEng etc.
 % \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
 \usepackage{listings}
+\usepackage{subcaption}
+\usepackage{minted}
 
+\usepackage{graphicx}
 \begin{document}
 
 \title{High Performance Memcached}
@@ -65,7 +68,16 @@ Acknowledgements go here.
 
 Software object caches, such as Memcached, are crucial to achieving high throughput and low response latency in a datacenter setting. A well-known problem with Memcached deployments is the high overhead incurred by the kernel's TCP/IP stack in processing of individual requests. This project will evaluate the performance of a vanilla Memcached setup, followed by an assessment of the effect that user-level networking and TCP offload have on Memcached. 
 
-Memory object caches is now widely used in industry. One of the most widely used memory object cache is Memcached. 
+
+\section{Project Aim}
+
+This project is consisted of following parts.
+
+\textbf{Baseline Tuning} We are going to first tune the original memcached and use the result as a baseline for following testing. The components we are going to tune are thread number, process number and IRQ affinity.
+
+\textbf{User-level network Evaluation} Evaluate to what extent applying user-level networking will influence the performance of memcached.
+
+\textbf{TCP Offload Evaluation} Evaluate the influence of multiple offloading techniques.
 
 
 
@@ -104,24 +116,27 @@ Memory object caches is now widely used in industry. One of the most widely used
 
 \section{Memcached}
 
-Memcached is a "high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load." Despite the ofﬁcial description aimed at dynamic web applications, Memcached is also used as a generic key value store to locate servers and services .
+% reph
+
+Memcached is a "high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load." Despite the official description aimed at dynamic web applications, Memcached is also used as a generic key value store to locate servers and services. 
 
 \subsection{Memcached protocol}
 
-Memcached support two  transport-layer protocols: TCP and UDP. They have some small difference. The basic protocol we are going to use in our experiments are described as Table~\ref{tab:mem_proto}. Note that there are many other command provided by memcached, but we are only going to test the most basic ones as listed. Comparing with TCP, the UDP protocol added an additional binary header for controlling. 
+Memcached support two  transport-layer protocols: TCP and UDP. They have some small difference. The basic protocol we are going to use in our experiments are described as Table~\ref{tab:mem_proto}. Note that there are many other command provided by memcached, but we are only going to test the most basic ones as listed. Comparing with TCP, the UDP protocol added an additional binary header for controlling. The binary header is described in Table~\ref{tab:mem_proto_udp}.
 
 
-\begin{table}
+\begin{table}[h]
+\centering
 \begin{tabular}{ |p{6cm}||p{6cm}|  }
 
  \hline
- Operation & Meaning \\
+ Operation & Description \\
  \hline
-get [key]  & Get the value of key \\
+get [key]  & Get the value of given key \\
  \hline
-set [arg1] [flags] [xxx] & Mellanox Connect-X 4 \\
+set [key] [flags] [length] value & Set the value of given key \\
  \hline
-delete [key] & delete a key provided by the arugument. \\
+delete [key] & delete a key provided by the argument. \\
  \hline
  
 \end{tabular}
@@ -130,6 +145,37 @@ delete [key] & delete a key provided by the arugument. \\
 
 
 \end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |p{4cm}||p{4cm}||p{4cm}|  }
+
+ \hline
+ Position byte & Content & Description \\
+ \hline
+0-1  & Request ID  & The id of the request\\
+ \hline
+ 2-3  & Sequence number  & The id of the request\\
+ \hline
+ 4-5  & Total number of datagrams  & The id of the request\\
+ \hline
+ 6-7  & Reserved  & Must be 0\\
+ \hline
+
+ 
+\end{tabular}
+\caption{Memcached UDP frame header}
+\label{tab:mem_proto_udp}
+
+
+\end{table}
+
+
+
+
+\subsection{Memcached parameters}
+\label{parameter}
 
 
 
@@ -144,7 +190,7 @@ One performance bottleneck of modern high-performance applications is the kernel
 \subsection{Data Plane Development Kit}
 
 
-The Data Plane Development Kit is "a set of libraries and drivers for fast packet processing"\cite{dpdk}. It runs mostly in userspace, and it serves as a platform for developer to develop high performance networking applications.
+The Data Plane Development Kit is "a set of libraries and drivers for fast packet processing"\cite{dpdk}. It runs mostly in user-space, and it serves as a platform for developer to develop high performance networking applications.
 
 
 
@@ -157,6 +203,7 @@ DPDK provides developers with a framework, which contains a set of libraries for
 \subsection{Seastar}
 DPDK doesn't contain a TCP/IP stack. In order to migrate TCP/IP based applications to use DPDK, developers need to implement their own TCP/IP stack using DPDK provided API. 
 
+Seastar\cite{seastar} is a framework that provided us with a ready-to-use user-level TCP/IP stack based on DPDK.
 
 
 \section{TCP Offload}
@@ -220,6 +267,14 @@ Methods such as TCP/IP checksum offload and LSO provide limited performance gain
 
 
 
+\section{Performance Analysis}
+
+\subsection{Linux perf}
+
+Perf is a tool provided by linux to 
+Perf began as a tool for using the performance counters subsystem in Linux, and has had various enhancements to add tracing capabilities.
+
+\subsection{FlameGraph}
 
 
 
@@ -236,13 +291,14 @@ Methods such as TCP/IP checksum offload and LSO provide limited performance gain
 
 % rephrase
 
-Firstly, it is important the define the desired quality of service we are looking to target with our benchmarks. Frequently, distributed systems are designed to work in parallel, each component responsible for a piece of computation which is then ultimately assembled into a larger piece of response before being shipped to the client. For example, an e-commerce store may choose to compute suggested products as well as brand new products separately only to assemble individual responses into an HTML page. Therefore, the slowest of all individual components will determine the overall time required to render a response.
+Before we start to do experiments, it's important to set up a goal for our benchmarking. For this project, a sufficient quality of service (QoS) will be under 1 millisecond for the 99th percentile request latency. 
 
+% more BB
 
+% Firstly, it is important the define the desired quality of service we are looking to target with our benchmarks. Frequently, distributed systems are designed to work in parallel, each component responsible for a piece of computation which is then ultimately assembled into a larger piece of response before being shipped to the client. For example, an e-commerce store may choose to compute suggested products as well as brand new products separately only to assemble individual responses into an HTML page. Therefore, the slowest of all individual components will determine the overall time required to render a response.
 
+% Let us define the quality of service (QoS) target of this study. For our benchmarking purposes, a sufficient  QoS will be the 99th percentile tail latency of a system under 1 millisecond. This is a reasonable target as the mean latency will generally (based on latency distribution) be significantly smaller. Furthermore, it is a similar latency target used in related research.
 
-
-Let us define the quality of service (QoS) target of this study. For our benchmarking purposes, a sufficient  QoS will be the 99th percentile tail latency of a system under 1 millisecond. This is a reasonable target as the mean latency will generally (based on latency distribution) be significantly smaller. Furthermore, it is a similar latency target used in related research.
 
 
 
@@ -257,11 +313,10 @@ The Server we are using is described in  Table~\ref{tab:hardware}.
 \subsection{Server}
 
 
-\begin{table}
+\begin{table}[h]
 \begin{tabular}{ |p{6cm}||p{6cm}|  }
 
- \hline
- \multicolumn{2}{|c|}{Hardware List} \\
+
  \hline
  Component Name & Device \\
  \hline
@@ -278,9 +333,7 @@ Network Interface Card & Mellanox Connect-X 4 \\
 \end{table}
 
 
-
-
-The Network Interface Card we are using is (mlx5) \cite{P1} .
+The Network Interface Card we are using is (mlx5) \cite{P1}.
 
 
 \subsubsection{Network topology}
@@ -303,7 +356,7 @@ There are two kinds of load testers: open-loop and closed-loop. Open-loop load t
 
 \subsection{Treadmill}
 
-Treadmill \cite{DBLP:conf/isca/ZhangMMT16} is a open-source load tester for memcached developed by Facebook. It's a typical open-loop load tester. It only supports TCP for memcached. For our experiments involving UDP, we implemented our own version of memcached for UDP.
+Treadmill \cite{DBLP:conf/isca/ZhangMMT16} is a open-source load tester for memcached developed by Facebook. It's a typical open-loop load tester. It only supports TCP for memcached. For our experiments involving UDP, we implemented our own version of treadmill for UDP.
 
 
 
@@ -314,29 +367,81 @@ Memaslap is a load tester provide by libmemcached \cite{P2}. It's a closed loop 
 
 
 \chapter{Baseline Tuning}
-
-
+In this chapter, we are going to tune the stock memcached by changing built-in parameters and system configurations to set up a baseline for following chapters to compare with.
 
 \section{Multithreading}
-In this section, we are going to explore the influence of multithreading. 
 
+In this section, we will evaluate how different number of threads can tail latency. Memcached supports multithreading by default, and it used spin lock % check again
+for synchronization from all threads. We increase the throughput linearly find out the maximum throughput memcached can achieve when restricting the 99 percentile latency less than 1 millisecond. 
+
+
+Intuitively and empirically, the best outcome we expected is when the number of memcached threads is the same as server CPU cores, as suggested by Leverich and Kozyrakis\cite{DBLP:conf/eurosys/LeverichK14},
+
+
+
+\subsection{Setup}
+The way we change the thread number is changing the argument \texttt{-t} passed to memcached. The detailed description of this parameter is mentioned in Section \ref{parameter}. 
+
+\subsection{Result}
+We can see the result in Figure~\ref{fig:threads}. According to the Figure~\ref{fig:threads}, we can see that the curve representing 4 threads (red curve) is the last one to hit the 1ms latency line, which is consistent with our previous empirical prediction. But we can also see from the figure, the 4 threads line isn't always the one with smallest latency, actually in the section from 160k throughput to 200k throughput, it's defeated by the curves representing 5 threads and 6 threads. But those two lines ("Thread 6" and "Thread 5") are getting higher latency after all 200k latency. One possible reason of this phenomenon can be CPU utilization. The curves are linearly increasing which means they are still not so close to maximum throughput, since the CPU is still under-utilized, more threads can increase some performance even they added some context switching overhead.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{figure/multithreading.pdf}
+	\caption{Multithreading}
+	\label{fig:threads}
+\end{figure}
+
+
+
+
+
+
+\section{Interrupt batching}
+Interrupt batching is a technique for improving the performance of packet processing under heavy workload. The basic idea of interrupt batching is that instead of raising a interrupt for every packet received, batch multiple packets in one interrupt. This can significantly reduce network and CPU resources because message batching results in fewer packet to process, effectively reducing the overhead of processing a packet.
+
+\begin{table}
+	\begin{tabular}{ |p{6cm}||p{6cm}|  }
+	 \hline
+	 Component Name & Device \\
+	 \hline
+	CPU & Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz (40 cores) \\
+	 \hline
+	Network Interface Card & Mellanox Connect-X 4 \\
+	 \hline∫
+	\end{tabular}
+	\caption{Hardware Table}
+	\label{tab:hardware}	
+\end{table}
+\subsection{Setup}
+We can use \texttt{ethtool} to change interrupt batching option of our NIC. The value is recommended by IBM(add cite here). The command we used is as follows.
+% cite here
+
+\begin{minted}{bash}
+$ ethtool -C  p2p1 rx-usecs 5 rx-frames 5 tx-usecs 5 rx-usecs 5
+\end{minted}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{figure/multithreading.pdf}
+	\caption{Batching vs non-batching interrupts}
+	\label{fig:batching}
+\end{figure}
+
+
+\subsection{Result}
+% placeholder figure
+The result is shown in Figure~\ref{fig:batching}. We can see that the curve representing batching interrupts can achieve a better throughput under 1ms cap than non-batching interrupts. So batching interrupts does help for improving tail latency.
 
 
 
 \section{Multiprocessing}
+In this section, we are going to use mcrouter to test the performance of multiprocessing.
 
+\section{Setup}
+We first need to setup multiple memcahed instances. 
 
-
-
-
-
-
-\section{IRQ Affinity}
-
-
-
-
-
+\subsection{Result}
 
 \chapter{Contention Analysis}
 
@@ -364,27 +469,91 @@ In this section, we are going to go over how DPDK is set up.
 %\shellcmd{mkdir -p /mnt/huge}
 %\texttt{\footnotesize\ sasasasa\newline sassasaas}
 
-\textbf{Compile and insert DPDK kernel modules} First we need to do \texttt{make config} to tell the compiler which architecture we are targeting. We need to generate binaries working on \texttt{x86\_64-native-linuxapp-gcc}. 
-
-\begin{lstlisting}[language=bash]
-  $ make config T=x86_64-native-linuxapp-gcc
-\end{lstlisting}
-
-Some NIC driver is not enabled by default, including the one we are using (mlx5). In this case, we need to manually enable it in \texttt{ config/common\_base} file.
-
-Then we can use \texttt{make} command to compile
+\textbf{Compile and insert DPDK kernel modules} First we need to do \texttt{make config} to tell the compiler which architecture we are targeting. We need to generate binaries working on \texttt{x86\_64-native-linuxapp-gcc}. The command is as follows.
 
 
-
-Then switch to output folder and insert kernel module: \texttt{igb\_uio.ko} using \texttt{insmod}.
-
-
-\textbf{Configure NIC} First we need to unload the NIC from system kernel driver using \texttt{ifconfig}. \texttt{ifconfig p2p1 down}. Then we can use the tool provided by DPDK to bind NIC to kernel driver. \texttt{dpdk-devbind.py}
+\begin{minted}{bash}
+$ make config T=x86_64-native-linuxapp-gcc
+\end{minted}
 
 
+Some NIC drivers are not enabled by default, including the one we are going to use (mlx5). In this case, we need to manually enable it in \texttt{ config/common\_base} file.
+
+Then we can use \texttt{make} command to compile DPDK. After successfully compiled DPDK, switch to output folder and insert kernel module: \texttt{igb\_uio.ko}.
+
+\begin{minted}{bash}
+$ insmod igb_uio.ko
+\end{minted}
 
 
-\chapter{Evaluation}
+\textbf{Configure NIC} First we need to unload the NIC from system kernel driver using \texttt{ifconfig}. 
+
+\begin{minted}{bash}
+$ ifconfig p2p1 down
+\end{minted}
+
+ Then we can use the tool provided by DPDK to bind NIC to kernel driver. \texttt{dpdk-devbind.py} This is common step for most NIC, but for our NIC specifically, this step is not necessary.
+
+\section{Experiment}
+In this section, we are going evaluate the performance between DPDK implementation and stock memcached.
+
+\subsection{Single Core performance}
+We are going to compare the latency performance DPDK memcached with stock memcached, each with only one core. The Figure~\ref{fig:dpdk_1} shows the result. 
+
+The curve of stock memcached faded at about 200,000 rps, which means that is the maximum throughput stock memcached can achieve. We can see DPDK version can achieve a much higher maximum throughput. Also, when the throughput is the same, the DPDK one also has lower latency than stock one.
+
+\begin{figure}[h]
+
+	\includegraphics{figure/dpdk_1.pdf}
+	\caption{DPDK}
+	\label{fig:dpdk_1}
+\end{figure}
+
+\subsection{Multiple Core performance}
+
+\section{Analysis}
+
+\subsection{CPU utilization analysis}
+
+\textbf{Different event}
+One major difference between DPDK and stock is DPDK made use of its poll mode driver. Different from original interrupt based Linux kernel network stack, poll mode driver use busy waiting to avoid using interrupts, which can significantly reduce the latency. When using the poll mode driver, the CPU utilization will always be 100\%. 
+
+
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+    	\includegraphics[height=1.5in]{figure/dpdk_busy_pie.pdf}
+    	\caption{Memcached (DPDK) busy time CPU utitlization }
+		\label{fig:dpdk_busy_pie}
+		
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[height=1.5in]{figure/dpdk_idle_pie.pdf}
+        \caption{Memcached (DPDK) idle time CPU utitlization}
+		\label{fig:dpdk_idle_pie}
+        
+		
+    \end{subfigure}
+    \caption{DPDK CPU utilization}
+\end{figure*}
+
+
+
+
+
+
+
+\begin{figure}[h]
+
+	\includegraphics[width=0.5\textwidth]{figure/mem_busy_pie.pdf}
+	\caption{Memcached (stock) busy time CPU utitlization}
+	\label{fig:dpdk_idle_pie_1}
+\end{figure}
+
+
+
 
 
 
@@ -394,6 +563,9 @@ Then switch to output folder and insert kernel module: \texttt{igb\_uio.ko} usin
 \section{Setup TCP Offloading}
 First, we use \textbf{ethtool} to check device offloading. We can show the support for TCP Offloading by executing following command: 
 \shellcmd{ethtool -k p2p2}
+
+
+
 
 
 %Features for p2p2:
@@ -442,27 +614,11 @@ First, we use \textbf{ethtool} to check device offloading. We can show the suppo
 %busy-poll: on [fixed]
 %hw-tc-offload: off [fixed]
 
+\section{Checksum Offload}
 
 
 \section{Large Send Offload}
 
-
-
-
-
-
-
-
-
-\chapter{Performance Analysis}
-
-\section{Profiling Tools}
-
-\subsection{Linux perf}
-
-
-\section{Profiling Visualization}
-\subsection{FlameGraph}
 
 
 

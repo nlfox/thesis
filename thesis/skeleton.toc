@@ -1,38 +1,52 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}
 \contentsline {section}{\numberline {1.1}Motivation}{7}
-\contentsline {section}{\numberline {1.2}Memcached}{7}
-\contentsline {section}{\numberline {1.3}User-level networking}{7}
-\contentsline {subsection}{\numberline {1.3.1}DPDK}{8}
-\contentsline {subsubsection}{\numberline {1.3.1.1}Seastar}{8}
-\contentsline {section}{\numberline {1.4}TCP Offload}{8}
-\contentsline {subsection}{\numberline {1.4.1}Full offload vs Partial offload}{8}
-\contentsline {subsection}{\numberline {1.4.2}TCP/IP checksum offload}{9}
-\contentsline {subsection}{\numberline {1.4.3}Large send offload}{9}
-\contentsline {chapter}{\numberline {2}Methodology}{11}
-\contentsline {section}{\numberline {2.1}Quality of Service}{11}
-\contentsline {section}{\numberline {2.2}Hardware}{11}
-\contentsline {subsection}{\numberline {2.2.1}Network Interface Card}{11}
-\contentsline {subsubsection}{\numberline {2.2.1.1}Network topology}{11}
-\contentsline {subsubsection}{\numberline {2.2.1.2}Mode switch}{11}
-\contentsline {section}{\numberline {2.3}Benchmark}{12}
-\contentsline {subsection}{\numberline {2.3.1}Open-loop vs Closed loop}{12}
-\contentsline {subsection}{\numberline {2.3.2}Treadmill}{12}
-\contentsline {chapter}{\numberline {3}Baseline Tuning}{13}
-\contentsline {section}{\numberline {3.1}Multithreading}{13}
-\contentsline {section}{\numberline {3.2}Multiprocessing}{13}
-\contentsline {section}{\numberline {3.3}IRQ Affinity}{13}
-\contentsline {chapter}{\numberline {4}Contention Analysis}{15}
-\contentsline {section}{\numberline {4.1}Core contention}{15}
-\contentsline {section}{\numberline {4.2}SMT Thread contention}{15}
-\contentsline {chapter}{\numberline {5}User-level Networking Optimization}{17}
-\contentsline {section}{\numberline {5.1}DPDK}{17}
-\contentsline {subsection}{\numberline {5.1.1}DPDK Setup}{17}
-\contentsline {chapter}{\numberline {6}TCP Offloading}{19}
-\contentsline {section}{\numberline {6.1}Setup TCP Offloading}{19}
-\contentsline {section}{\numberline {6.2}Large Send Offload}{19}
-\contentsline {chapter}{\numberline {7}Performance Analysis}{21}
-\contentsline {section}{\numberline {7.1}Profiling Tools}{21}
-\contentsline {subsection}{\numberline {7.1.1}Linux perf}{21}
-\contentsline {section}{\numberline {7.2}Profiling Visualization}{21}
-\contentsline {subsection}{\numberline {7.2.1}FlameGraph}{21}
-\contentsline {chapter}{Bibliography}{23}
+\contentsline {section}{\numberline {1.2}Project Aim}{7}
+\contentsline {chapter}{\numberline {2}Background}{9}
+\contentsline {section}{\numberline {2.1}Memcached}{9}
+\contentsline {subsection}{\numberline {2.1.1}Memcached protocol}{9}
+\contentsline {subsection}{\numberline {2.1.2}Memcached parameters}{10}
+\contentsline {section}{\numberline {2.2}User-level networking}{10}
+\contentsline {subsection}{\numberline {2.2.1}Data Plane Development Kit}{10}
+\contentsline {subsection}{\numberline {2.2.2}Seastar}{10}
+\contentsline {section}{\numberline {2.3}TCP Offload}{10}
+\contentsline {subsection}{\numberline {2.3.1}Full offload vs Partial offload}{11}
+\contentsline {subsection}{\numberline {2.3.2}TCP/IP checksum offload}{11}
+\contentsline {subsection}{\numberline {2.3.3}Large send offload}{11}
+\contentsline {section}{\numberline {2.4}Performance Analysis}{12}
+\contentsline {subsection}{\numberline {2.4.1}Linux perf}{12}
+\contentsline {subsection}{\numberline {2.4.2}FlameGraph}{12}
+\contentsline {chapter}{\numberline {3}Methodology}{13}
+\contentsline {section}{\numberline {3.1}Quality of Service}{13}
+\contentsline {section}{\numberline {3.2}Hardware}{13}
+\contentsline {subsection}{\numberline {3.2.1}Server}{13}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Network topology}{13}
+\contentsline {section}{\numberline {3.3}Benchmark}{14}
+\contentsline {subsection}{\numberline {3.3.1}Open-loop vs Closed loop}{14}
+\contentsline {subsection}{\numberline {3.3.2}Treadmill}{14}
+\contentsline {subsection}{\numberline {3.3.3}Memaslap}{14}
+\contentsline {chapter}{\numberline {4}Baseline Tuning}{15}
+\contentsline {section}{\numberline {4.1}Multithreading}{15}
+\contentsline {subsection}{\numberline {4.1.1}Setup}{15}
+\contentsline {subsection}{\numberline {4.1.2}Result}{15}
+\contentsline {section}{\numberline {4.2}Interrupt batching}{16}
+\contentsline {subsection}{\numberline {4.2.1}Setup}{17}
+\contentsline {subsection}{\numberline {4.2.2}Result}{17}
+\contentsline {section}{\numberline {4.3}Multiprocessing}{17}
+\contentsline {section}{\numberline {4.4}Setup}{17}
+\contentsline {subsection}{\numberline {4.4.1}Result}{18}
+\contentsline {chapter}{\numberline {5}Contention Analysis}{19}
+\contentsline {section}{\numberline {5.1}Core contention}{19}
+\contentsline {section}{\numberline {5.2}SMT Thread contention}{19}
+\contentsline {chapter}{\numberline {6}User-level Networking Optimization}{21}
+\contentsline {section}{\numberline {6.1}DPDK}{21}
+\contentsline {subsection}{\numberline {6.1.1}DPDK Setup}{21}
+\contentsline {section}{\numberline {6.2}Experiment}{22}
+\contentsline {subsection}{\numberline {6.2.1}Single Core performance}{22}
+\contentsline {subsection}{\numberline {6.2.2}Multiple Core performance}{23}
+\contentsline {section}{\numberline {6.3}Analysis}{23}
+\contentsline {subsection}{\numberline {6.3.1}CPU utilization analysis}{23}
+\contentsline {chapter}{\numberline {7}TCP Offloading}{25}
+\contentsline {section}{\numberline {7.1}Setup TCP Offloading}{25}
+\contentsline {section}{\numberline {7.2}Checksum Offload}{25}
+\contentsline {section}{\numberline {7.3}Large Send Offload}{25}
+\contentsline {chapter}{Bibliography}{27}
