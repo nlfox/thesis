@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZdl{} ethtool \PYGZhy{}C  p2p1 rx\PYGZhy{}usecs \PYG{l+m}{5} rx\PYGZhy{}frames \PYG{l+m}{5} tx\PYGZhy{}usecs \PYG{l+m}{5} rx\PYGZhy{}usecs \PYG{l+m}{5}
+\end{Verbatim}

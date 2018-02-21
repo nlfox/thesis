@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 FEB 2018 10:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 FEB 2018 20:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -631,10 +631,9 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 7099) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [9]
-[10]
+[9] [10]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
@@ -663,7 +662,7 @@ Chapter 4.
 File: figure/multithreading.pdf Graphic file (type pdf)
 
 <use figure/multithreading.pdf>
-Package pdftex.def Info: figure/multithreading.pdf used on input line 390.
+Package pdftex.def Info: figure/multithreading.pdf used on input line 399.
 (pdftex.def)             Requested size: 288.78816pt x 288.78816pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no ˆ in font ptmr7t!
@@ -673,13 +672,17 @@ Missing character: There is no « in font ptmr7t!
  (./_minted-skeleton/default-pyg-prefix.pygstyle) (./_minted-skeleton/default.p
 ygstyle)
 (./_minted-skeleton/EE9C7ABE1EE54241F83D41E3CFFB13FF5366C25BD963E251432D8B9A045
-40CAA.pygtex [16 <./figure/multithreading.pdf>])
-File: figure/multithreading.pdf Graphic file (type pdf)
+40CAA.pygtex) <figure/batching.pdf, id=58, 722.7pt x 722.7pt>
+File: figure/batching.pdf Graphic file (type pdf)
 
-<use figure/multithreading.pdf>
-Package pdftex.def Info: figure/multithreading.pdf used on input line 426.
+<use figure/batching.pdf>
+Package pdftex.def Info: figure/batching.pdf used on input line 437.
 (pdftex.def)             Requested size: 288.78816pt x 288.78816pt.
- [17] [18]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./figure/multithreading.pdf>] [17 <./figure/batching.pdf>] [18]
 Chapter 5.
 [19
 
@@ -702,71 +705,74 @@ Chapter 6.
 
 (./_minted-skeleton/58149317D9D143DF77F8D5544F48E5745366C25BD963E251432D8B9A045
 40CAA.pygtex)
-Overfull \hbox (27.47142pt too wide) in paragraph at lines 495--496
+Overfull \hbox (27.47142pt too wide) in paragraph at lines 509--510
 []\OT1/ptm/m/n/12 Then we can use the tool pro-vided by DPDK to bind NIC to ker
 -nel driver. \OT1/pcr/m/n/12 dpdk-devbind.py
  []
 
-[21] <figure/dpdk_1.pdf, id=115, 433.62pt x 289.08pt>
+[21] <figure/dpdk_1.pdf, id=153, 433.62pt x 289.08pt>
 File: figure/dpdk_1.pdf Graphic file (type pdf)
  <use figure/dpdk_1.pdf>
-Package pdftex.def Info: figure/dpdk_1.pdf used on input line 507.
+Package pdftex.def Info: figure/dpdk_1.pdf used on input line 525.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
-Overfull \hbox (21.05397pt too wide) in paragraph at lines 507--508
+Overfull \hbox (21.05397pt too wide) in paragraph at lines 525--526
 [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./figure/dpdk_1.pdf>] <figure/dpdk_busy_pie.pdf, id=164, 433.62pt x 289.0
-8pt>
+[22 <./figure/dpdk_1.pdf>]
+<figure/dpdk_busy_pie.pdf, id=202, 433.62pt x 289.08pt>
 File: figure/dpdk_busy_pie.pdf Graphic file (type pdf)
 
 <use figure/dpdk_busy_pie.pdf>
-Package pdftex.def Info: figure/dpdk_busy_pie.pdf used on input line 526.
+Package pdftex.def Info: figure/dpdk_busy_pie.pdf used on input line 566.
 (pdftex.def)             Requested size: 162.6071pt x 108.405pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 527.
+(Font)              scaled to size 9.85492pt on input line 567.
 
-<figure/dpdk_idle_pie.pdf, id=165, 433.62pt x 289.08pt>
+<figure/dpdk_idle_pie.pdf, id=203, 433.62pt x 289.08pt>
 File: figure/dpdk_idle_pie.pdf Graphic file (type pdf)
 
 <use figure/dpdk_idle_pie.pdf>
-Package pdftex.def Info: figure/dpdk_idle_pie.pdf used on input line 533.
+Package pdftex.def Info: figure/dpdk_idle_pie.pdf used on input line 573.
 (pdftex.def)             Requested size: 162.6071pt x 108.405pt.
 
-Overfull \hbox (4.56006pt too wide) in paragraph at lines 525--539
+Overfull \hbox (4.56006pt too wide) in paragraph at lines 565--579
  [][]  [] 
  []
 
-<figure/mem_busy_pie.pdf, id=166, 433.62pt x 289.08pt>
+<figure/mem_busy_pie.pdf, id=204, 433.62pt x 289.08pt>
 File: figure/mem_busy_pie.pdf Graphic file (type pdf)
 
 <use figure/mem_busy_pie.pdf>
-Package pdftex.def Info: figure/mem_busy_pie.pdf used on input line 550.
+Package pdftex.def Info: figure/mem_busy_pie.pdf used on input line 588.
 (pdftex.def)             Requested size: 206.28249pt x 137.52173pt.
  [23 <./figure/dpdk_busy_pie.pdf> <./figure/dpdk_idle_pie.pdf
 
 pdfTeX warning: pdflatex (file ./figure/dpdk_idle_pie.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
-> <./figure/mem_busy_pie.pdf
-
-pdfTeX warning: pdflatex (file ./figure/mem_busy_pie.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] [24
-
-]
+>] [24 <./figure/mem_busy_pie.pdf>]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--566
+Underfull \hbox (badness 10000) in paragraph at lines 602--604
 
  []
 
-(./skeleton.bbl [25] [26
+(./skeleton.bbl [25
 
-]) [27] (./skeleton.aux)
+] [26
+
+]
+./skeleton.bbl:17: Undefined control sequence.
+l.17 \newblock \url
+                   {https://github.com/brendangregg/FlameGraph}, 2017.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) [27] (./skeleton.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -774,10 +780,10 @@ runsystem(rm skeleton.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 8735 strings out of 492995
- 146167 string characters out of 6132704
- 256906 words of memory out of 5000000
- 12105 multiletter control sequences out of 15000+600000
+ 8742 strings out of 492995
+ 146305 string characters out of 6132704
+ 257919 words of memory out of 5000000
+ 12111 multiletter control sequences out of 15000+600000
  37931 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,10n,40p,940b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -789,10 +795,10 @@ mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017/texmf-dist
 /type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on skeleton.pdf (27 pages, 158400 bytes).
+Output written on skeleton.pdf (27 pages, 170977 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 318 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,11 +4,11 @@
 \contentsline {chapter}{\numberline {2}Background}{9}
 \contentsline {section}{\numberline {2.1}Memcached}{9}
 \contentsline {subsection}{\numberline {2.1.1}Memcached protocol}{9}
-\contentsline {subsection}{\numberline {2.1.2}Memcached parameters}{10}
+\contentsline {subsection}{\numberline {2.1.2}Memcached parameters}{9}
 \contentsline {section}{\numberline {2.2}User-level networking}{10}
 \contentsline {subsection}{\numberline {2.2.1}Data Plane Development Kit}{10}
 \contentsline {subsection}{\numberline {2.2.2}Seastar}{10}
-\contentsline {section}{\numberline {2.3}TCP Offload}{10}
+\contentsline {section}{\numberline {2.3}TCP Offload}{11}
 \contentsline {subsection}{\numberline {2.3.1}Full offload vs Partial offload}{11}
 \contentsline {subsection}{\numberline {2.3.2}TCP/IP checksum offload}{11}
 \contentsline {subsection}{\numberline {2.3.3}Large send offload}{11}
@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {4.1.1}Setup}{15}
 \contentsline {subsection}{\numberline {4.1.2}Result}{15}
 \contentsline {section}{\numberline {4.2}Interrupt batching}{16}
-\contentsline {subsection}{\numberline {4.2.1}Setup}{17}
+\contentsline {subsection}{\numberline {4.2.1}Setup}{16}
 \contentsline {subsection}{\numberline {4.2.2}Result}{17}
 \contentsline {section}{\numberline {4.3}Multiprocessing}{17}
-\contentsline {section}{\numberline {4.4}Setup}{17}
+\contentsline {section}{\numberline {4.4}Setup}{18}
 \contentsline {subsection}{\numberline {4.4.1}Result}{18}
 \contentsline {chapter}{\numberline {5}Contention Analysis}{19}
 \contentsline {section}{\numberline {5.1}Core contention}{19}
@@ -40,13 +40,16 @@
 \contentsline {chapter}{\numberline {6}User-level Networking Optimization}{21}
 \contentsline {section}{\numberline {6.1}DPDK}{21}
 \contentsline {subsection}{\numberline {6.1.1}DPDK Setup}{21}
-\contentsline {section}{\numberline {6.2}Experiment}{22}
-\contentsline {subsection}{\numberline {6.2.1}Single Core performance}{22}
-\contentsline {subsection}{\numberline {6.2.2}Multiple Core performance}{23}
-\contentsline {section}{\numberline {6.3}Analysis}{23}
-\contentsline {subsection}{\numberline {6.3.1}CPU utilization analysis}{23}
+\contentsline {section}{\numberline {6.2}Issues and solutions in DPDK deployment}{22}
+\contentsline {section}{\numberline {6.3}Experiment}{22}
+\contentsline {subsection}{\numberline {6.3.1}Single Core performance}{22}
+\contentsline {subsection}{\numberline {6.3.2}Multiple Core performance}{23}
+\contentsline {section}{\numberline {6.4}Analysis}{23}
+\contentsline {subsection}{\numberline {6.4.1}CPU utilization analysis}{23}
+\contentsline {subsection}{\numberline {6.4.2}Profiling analysis}{23}
 \contentsline {chapter}{\numberline {7}TCP Offloading}{25}
 \contentsline {section}{\numberline {7.1}Setup TCP Offloading}{25}
 \contentsline {section}{\numberline {7.2}Checksum Offload}{25}
+\contentsline {subsection}{\numberline {7.2.1}Experiment}{25}
 \contentsline {section}{\numberline {7.3}Large Send Offload}{25}
 \contentsline {chapter}{Bibliography}{27}

@@ -176,10 +176,23 @@ delete [key] & delete a key provided by the argument. \\
 
 \subsection{Memcached parameters}
 \label{parameter}
+There are multiple parameters provided by memcached, which we can try to optimize them to get maximum performance. The parameters are listed in the Table~\ref{tab:mem_parameter} below.
 
-
-
-
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ |p{4cm}||p{8cm} |}
+	
+	 \hline
+	 Parameter Name & Description  \\
+	 \hline
+	 -t or --thread  & Number of memcached thread.  \\
+	 \hline
+	 
+	\end{tabular}
+	\caption{Memcached UDP frame header}
+	\label{tab:mem_parameter}
+	
+\end{table}
 
 
 \section{User-level networking}
@@ -203,7 +216,10 @@ DPDK provides developers with a framework, which contains a set of libraries for
 \subsection{Seastar}
 DPDK doesn't contain a TCP/IP stack. In order to migrate TCP/IP based applications to use DPDK, developers need to implement their own TCP/IP stack using DPDK provided API. 
 
-Seastar\cite{seastar} is a framework that provided us with a ready-to-use user-level TCP/IP stack based on DPDK.
+Seastar\cite{seastar} is a framework that provided us with a ready-to-use user-level TCP/IP stack based on DPDK. Developers can use the high-level abstracted APIs provided by seastar to build high performance application without too much knowledge from low-level hardware details like EAL in DPDK.
+
+Seastar provided a memcached for demonstration, which we are going to base our experiments on. But the demonstration memcached is not perfect, it contains multiple flaws especially when used with an open-loop tester. We will describe those issues in follow sections.
+
 
 
 \section{TCP Offload}
@@ -226,17 +242,6 @@ TOE implementations also can be differentiated by the amount of processing that 
 % rephrase done
 
 TCP/IP checksum offload let the network adapter to do the calculation task of verifying the checksum of packet received, which is done by CPU originally. This technique can reduce the CPU utilization.
-
-% rephrase
-
-The TCP/IP checksum offload technique moves the calculation of
-the TCP and IP checksum packets from the host CPU to the network
-adapter. For the TCP checksum, the transport layer on the host calculates
-the TCP pseudo-header checksum and places this value in
-the checksum field, thus enabling the network adapter to calculate
-the correct TCP checksum without touching the IP header. However,
-this approach yields only a modest reduction in CPU utilization.
-
 
 
 \subsection{Large send offload}
@@ -272,9 +277,11 @@ Methods such as TCP/IP checksum offload and LSO provide limited performance gain
 \subsection{Linux perf}
 
 Perf is a tool provided by linux to 
-Perf began as a tool for using the performance counters subsystem in Linux, and has had various enhancements to add tracing capabilities.
+Perf began as a tool for using the performance counters subsystem in Linux, and has had various enhancements to add tracing capabilities. The basic idea of perf is to set up interrupts to do sampling, the overhead is quite small if we use a reasonable sampling rate. This tool is widely used in researches about linux performance. It is a tool developed by Linux kernel team, so it can quickly adapt lastest kernel features.
 
 \subsection{FlameGraph}
+FlameGraph \cite{flamegraph} is a visualization tool for perf. We use FlameGraph for easier analysis. FlameGraph can convert perf data to bar charts and show the stack trace as stacked bars. The sample graph is attached as Figure~(todo). We can use search functionality to find out the percentage of functions we are interested in. (add sample flamegraph)
+
 
 
 
@@ -323,6 +330,8 @@ The Server we are using is described in  Table~\ref{tab:hardware}.
 CPU & Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz (40 cores) \\
  \hline
 Network Interface Card & Mellanox Connect-X 4 \\
+\hline
+Memory & 32GB \\
  \hline
  
  
@@ -356,7 +365,7 @@ There are two kinds of load testers: open-loop and closed-loop. Open-loop load t
 
 \subsection{Treadmill}
 
-Treadmill \cite{DBLP:conf/isca/ZhangMMT16} is a open-source load tester for memcached developed by Facebook. It's a typical open-loop load tester. It only supports TCP for memcached. For our experiments involving UDP, we implemented our own version of treadmill for UDP.
+Treadmill \cite{DBLP:conf/isca/ZhangMMT16} is a open-source load tester for memcached developed by Facebook. It's a typical open-loop load tester. It only supports TCP for memcached. For our experiments involving UDP, we implemented our own version of treadmill for UDP. 
 
 
 
@@ -400,6 +409,8 @@ We can see the result in Figure~\ref{fig:threads}. According to the Figure~\ref{
 \section{Interrupt batching}
 Interrupt batching is a technique for improving the performance of packet processing under heavy workload. The basic idea of interrupt batching is that instead of raising a interrupt for every packet received, batch multiple packets in one interrupt. This can significantly reduce network and CPU resources because message batching results in fewer packet to process, effectively reducing the overhead of processing a packet.
 
+Empirically, we expect after we enabled interrupt batch, the performance have some improve.
+
 \begin{table}
 	\begin{tabular}{ |p{6cm}||p{6cm}|  }
 	 \hline
@@ -423,7 +434,7 @@ $ ethtool -C  p2p1 rx-usecs 5 rx-frames 5 tx-usecs 5 rx-usecs 5
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{figure/multithreading.pdf}
+	\includegraphics[width=0.7\textwidth,height=0.7\textheight,keepaspectratio]{figure/batching.pdf}
 	\caption{Batching vs non-batching interrupts}
 	\label{fig:batching}
 \end{figure}
@@ -431,7 +442,7 @@ $ ethtool -C  p2p1 rx-usecs 5 rx-frames 5 tx-usecs 5 rx-usecs 5
 
 \subsection{Result}
 % placeholder figure
-The result is shown in Figure~\ref{fig:batching}. We can see that the curve representing batching interrupts can achieve a better throughput under 1ms cap than non-batching interrupts. So batching interrupts does help for improving tail latency.
+The result is shown in Figure~\ref{fig:batching}. We can see that the curve representing batching interrupts can achieve a better throughput under 1ms cap than non-batching interrupts. But we can also see that in lower throughput state, not everytime batching curve can beat non-batching curve. This might because in low system utilization, batching input doesn't help that much, but the delay it brings can affect the performance. So batching interrupts does help for improving tail latency in high throughput.
 
 
 
@@ -439,9 +450,11 @@ The result is shown in Figure~\ref{fig:batching}. We can see that the curve repr
 In this section, we are going to use mcrouter to test the performance of multiprocessing.
 
 \section{Setup}
-We first need to setup multiple memcahed instances. 
+We first need to setup multiple memcached instances. 
 
 \subsection{Result}
+
+
 
 \chapter{Contention Analysis}
 
@@ -486,6 +499,7 @@ $ insmod igb_uio.ko
 \end{minted}
 
 
+
 \textbf{Configure NIC} First we need to unload the NIC from system kernel driver using \texttt{ifconfig}. 
 
 \begin{minted}{bash}
@@ -494,8 +508,12 @@ $ ifconfig p2p1 down
 
  Then we can use the tool provided by DPDK to bind NIC to kernel driver. \texttt{dpdk-devbind.py} This is common step for most NIC, but for our NIC specifically, this step is not necessary.
 
+
+\section{Issues and solutions in DPDK deployment}
+DOING.
+
 \section{Experiment}
-In this section, we are going evaluate the performance between DPDK implementation and stock memcached.
+In this section, we are going evaluate the performance between DPDK implementation and stock memcached. 
 
 \subsection{Single Core performance}
 We are going to compare the latency performance DPDK memcached with stock memcached, each with only one core. The Figure~\ref{fig:dpdk_1} shows the result. 
@@ -515,8 +533,30 @@ The curve of stock memcached faded at about 200,000 rps, which means that is the
 
 \subsection{CPU utilization analysis}
 
-\textbf{Different event}
 One major difference between DPDK and stock is DPDK made use of its poll mode driver. Different from original interrupt based Linux kernel network stack, poll mode driver use busy waiting to avoid using interrupts, which can significantly reduce the latency. When using the poll mode driver, the CPU utilization will always be 100\%. 
+
+We can see from Figure~\ref{fig:dpdk_busy_pie} and Figure~\ref{fig:dpdk_idle_pie_1} that in DPDK version(busy time), 99\% of time is spent in user space, while stock memcached spending 70\% time in kernel. This significantly reduce the kernel switching overhead.
+
+\subsection{Profiling analysis}
+
+The perf data for stock and DPDK version showed that, In the stock version, the main functionality only take up 4.89\% of run time (including pthread locking overhead), while the DPDK version spend 28.7\% in the main functionality(hashtable operation). This result reflected that the more CPU time can be used for main functionality instead of interrupt and context switching overhead. This analysis also explained the excellent performance achieved by DPDK.
+
+
+
+%usr Show the percentage of CPU utilization that occurred while executing at the user level (application).
+
+%sys Show the percentage of CPU utilization that occurred while executing at the system level (kernel). Note that this does not include time spent servicing hardware and software interrupts.
+
+%iowait Show the percentage of time that the CPU or CPUs were idle during which the system had an outstanding disk I/O request.
+
+%irq Show the percentage of time spent by the CPU or CPUs to service hardware interrupts.
+
+%soft Show the percentage of time spent by the CPU or CPUs to service software interrupts.
+
+%idle Show the percentage of time that the CPU or CPUs were idle and the system did not have an outstanding disk I/O request.
+
+
+
 
 
 
@@ -543,10 +583,8 @@ One major difference between DPDK and stock is DPDK made use of its poll mode dr
 
 
 
-
-
-\begin{figure}[h]
-
+\begin{figure}
+	\centering
 	\includegraphics[width=0.5\textwidth]{figure/mem_busy_pie.pdf}
 	\caption{Memcached (stock) busy time CPU utitlization}
 	\label{fig:dpdk_idle_pie_1}
@@ -563,6 +601,7 @@ One major difference between DPDK and stock is DPDK made use of its poll mode dr
 \section{Setup TCP Offloading}
 First, we use \textbf{ethtool} to check device offloading. We can show the support for TCP Offloading by executing following command: 
 \shellcmd{ethtool -k p2p2}
+
 
 
 
@@ -615,6 +654,8 @@ First, we use \textbf{ethtool} to check device offloading. We can show the suppo
 %hw-tc-offload: off [fixed]
 
 \section{Checksum Offload}
+
+\subsection{Experiment}
 
 
 \section{Large Send Offload}

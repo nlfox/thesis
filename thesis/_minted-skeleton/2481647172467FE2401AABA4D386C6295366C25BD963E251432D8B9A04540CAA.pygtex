@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZdl{} make config \PYG{n+nv}{T}\PYG{o}{=}x86\PYGZus{}64\PYGZhy{}native\PYGZhy{}linuxapp\PYGZhy{}gcc
+\end{Verbatim}
